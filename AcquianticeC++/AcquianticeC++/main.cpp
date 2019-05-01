@@ -10,6 +10,11 @@
 using namespace std;
 int main(int argc, const char * argv[]) {
     // insert code here...
-    cout << "My name is Tony\n";
+    int Number1 = 0,Number2 = 0;
+    cout <<"Enter two numbers: "<<endl;
+    cin  >> Number1 >> Number2;
+    cout << "The sum of " << Number1 << " and "<< Number2 <<" is "
+         << Number1 + Number2 << endl;
+//    cout << "My name is Tony\n";
     return 0;
 }
