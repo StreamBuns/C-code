@@ -7,14 +7,26 @@
 //
 
 #include <iostream>
+
 using namespace std;
+# define M 5
 int main(int argc, const char * argv[]) {
     // insert code here...
-    cout << true << "\t" << false << endl;
-    
-    cout << boolalpha << true << "\n" << false << endl;
-    cout << noboolalpha;
-    cout << true << "\t" << false;
+    const int i = 100;
+    constexpr int u = 100;
+    auto p = 2;
+    decltype(p) x = 2;
+    decltype(x) t = 2;
+    decltype(t) b = 2;
+//    unsigned char u = -1;
+//    int  i = u;
+//    cout << sizeof(char) << endl;
+//    cout << i << endl;
+//    cout << true << "\t" << false << endl;
+//
+//    cout << boolalpha << true << "\n" << false << endl;
+//    cout << noboolalpha;
+//    cout << true << "\t" << false;
     
     //char Name [20]={'\0'};
 //    int i;
