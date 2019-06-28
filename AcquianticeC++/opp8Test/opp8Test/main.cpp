@@ -5,9 +5,11 @@
 //
 //  Created by 赵桐 on 2019/6/15.
 //  Copyright [表情] 2019 赵桐. All rights reserved.
-//
+//stack last_in first_out
+//queue last_in last_out
 
 #include <iostream>
+#include <stack>
 using namespace std;
 
 class StudentRecord
@@ -22,7 +24,7 @@ public:
     }
     void printf()
     {
-        cout << "Name: "<<stuName<<",Number: "<<stuNo<<endl;
+        cout << "Name: "<<stuName<<", Number: "<<stuNo<<endl;
         
     }
 };
@@ -43,7 +45,7 @@ public:
     //    }
 };
 int StuNumber = 0;
-
+int QueueNumber = 0;
 
 class LinkList
 {
@@ -60,10 +62,24 @@ public:
         //        lsn = *h;
         //        h = &temp;
     }
+    void QueueHeadPend(StudentNode  &lsn)
+    {
+        lsn.next = h;
+        h = &lsn;
+        QueueNumber ++;
+        //        StudentNode temp = lsn;
+        //        lsn = *h;
+        //        h = &temp;
+    }
     void TailPend(StudentNode & lsn)
     {
         StudentNode* temp = h;
-        for (int i=0; i<StuNumber; i++)
+        if(StuNumber ==0)
+        {
+            h = &lsn;
+            StuNumber++;
+        }
+        else for (int i=0; i<StuNumber; i++)
             //        {
             //            temp = (*temp).next;
             //        }
@@ -87,17 +103,35 @@ public:
     }
     void HeadDel()
     {
+        (*h).date.printf();
         h = (*h).next;
         StuNumber--;
     }
     void TailDel()
     {
         StudentNode* temp = h;
-        for (int i=0; i<StuNumber-1; i++)
+        temp = new StudentNode;
+        if(QueueNumber ==1)
+        {
+            (*h).date.printf();
+            h=0;
+            QueueNumber --;
+        }
+        else if(QueueNumber==2)
+        {
+            (*((*h).next)).date.printf();
+            (*h).next = 0;
+            QueueNumber--;
+        }
+        else{
+        {
+            for (int i=0; i<QueueNumber-1; i++)
         {
             temp = (*temp).next;
         }
+        (*(*temp).next).date.printf();
         (*temp).next = 0;
+            QueueNumber--;}}
     }
     void Traversal(void *(pf)(StudentNode*))
     {
@@ -119,16 +153,17 @@ class LinkedStak : public LinkList
 public:
     void Push(StudentRecord record)
     {
-        stack StudentNode st_1;
-        st_1.date  = record;
-        LinkList::TailPend(st_1);
+        StudentNode *st_1;
+        st_1 = new StudentNode;
+        (*st_1).date  = record;
+        LinkList::HeadPend(*st_1);
     }
     bool Pop(StudentRecord &record)
     {
         if (GetH() ==0)
             return 1;
-        StudentNode st_1;
-        st_1.date  = record;
+//        StudentNode st_1;
+//        st_1.date  = record;
         LinkList::HeadDel();
         return 0;
     }
@@ -138,16 +173,19 @@ class LinkedQueue : public LinkList
 public:
     void EnQueue(StudentRecord record)
     {
-        StudentNode st_1;
-        st_1.date  = record;
-        LinkList::HeadPend(st_1);
+        StudentNode *st_1;
+        st_1 = new StudentNode;
+        (*st_1).date  = record;
+        LinkList::QueueHeadPend(*st_1);
     }
     bool DeQueue(StudentRecord &record)
     {
-        StudentNode st_1;
-        st_1.date  = record;
+//        StudentNode st_1;
+//        st_1.date  = record;
+        if (GetH() ==0)
+            return 1;
         LinkList::TailDel();
-        return 1;
+        return 0;
     }
     
 };
@@ -155,14 +193,20 @@ public:
 int Judge();
 int Run(int);
 
+LinkedQueue queue;
+LinkedStak stak;
+StudentRecord *pstak;
+StudentRecord *pqueue;
+
 int main(int argc, const char * argv[])
 {
     // insert code here...
     for(;;)
     {
-      if(  Run(Judge()))
+      if(Run(Judge())== 1)
           break;
     }
+//    Run(Judge());
     
     //    LinkedQueue queue;
     //    LinkedStak stak;
@@ -192,22 +236,25 @@ int Judge()
 }
 int Run(int instr)
 {
-    LinkedQueue queue;
-    LinkedStak stak;
-    StudentRecord sr_1;
+//    LinkedQueue queue;
+//    LinkedStak stak;
+//    StudentRecord sr_1;
     if (instr == 1)
     {
         string strName;
         int StNO;
         cin >> strName >> StNO;
-        sr_1.stuName = strName;
-        sr_1.stuNo = StNO;
-        stak.Push(sr_1);
+        StudentRecord *sr_1;
+        sr_1 = new StudentRecord;
+        (*sr_1).stuName = strName;
+        (*sr_1).stuNo = StNO;
+        pstak = sr_1;
+        stak.Push(*sr_1);
         return 0;
     }
     else if (instr == 2)
     {
-        if (stak.Pop(sr_1))
+        if (stak.Pop(*pstak)==0)
             return 0;
         else
         {
@@ -216,22 +263,32 @@ int Run(int instr)
     }
     else if (instr == 3)
     {
+//        string strName;
+//        int StNO;
+//        cin >> strName >> StNO;
+//        sr_1.stuName = strName;
+//        sr_1.stuNo = StNO;
         string strName;
         int StNO;
         cin >> strName >> StNO;
-        sr_1.stuName = strName;
-        sr_1.stuNo = StNO;
-        ////////////////////////////ajsoidjfonag
+        StudentRecord *sr_2;
+        sr_2 = new StudentRecord;
+        (*sr_2).stuName = strName;
+        (*sr_2).stuNo = StNO;
+        pqueue = sr_2;
+        queue.EnQueue(*sr_2);
         return 0;
+        ////////////////////////////ajsoidjfonag
+        //return 0;
     }
     else if (instr == 4)
     {
-        string strName;
-        int StNO;
-        cin >> strName >> StNO;
-        sr_1.stuName = strName;
-        sr_1.stuNo = StNO;
-        return 0;
+        if (queue.DeQueue(*pqueue)==0)
+            return 0;
+        else
+        {
+            cout << "Queue is empty!"<<endl;
+        }
     }
     else if (instr == 5)
     {
@@ -242,4 +299,5 @@ int Run(int instr)
         cout << "Input error!"<<endl;
         return 0;
     }
+    return 0;
 }
