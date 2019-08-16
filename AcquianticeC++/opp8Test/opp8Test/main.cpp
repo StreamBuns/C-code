@@ -22,13 +22,13 @@ public:
         stuName = _strName;
         stuNo = _Number;
     }
-    void printf()
+     void printf()
     {
         cout << "Name: "<<stuName<<", Number: "<<stuNo<<endl;
         
     }
 };
-
+z
 
 class StudentNode
 {

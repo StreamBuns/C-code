@@ -272,7 +272,10 @@ public:
 void Run();
 int main(int argc, const char * argv[]) {
     // insert code here...
-
+//    int a =5;
+//    int * const ptr = &a;
+//    (*ptr)++;
+//    cout << a <<endl;
 //    Rational r1,r2;
 //    cin >> r1;
 ////    r2 = (++r1);
