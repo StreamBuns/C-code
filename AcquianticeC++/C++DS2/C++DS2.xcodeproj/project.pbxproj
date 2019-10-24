@@ -88,7 +88,7 @@
 		A0212E9223375B6B001A4C73 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "赵桐";
 				TargetAttributes = {
 					A0212E9923375B6B001A4C73 = {
@@ -102,6 +102,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = A0212E9123375B6B001A4C73;
 			productRefGroup = A0212E9B23375B6B001A4C73 /* Products */;
@@ -239,6 +240,7 @@
 		A0212EA223375B6B001A4C73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZT988RGZ9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -248,6 +250,7 @@
 		A0212EA323375B6B001A4C73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZT988RGZ9;
 				PRODUCT_NAME = "$(TARGET_NAME)";

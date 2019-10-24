@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0F57B33233CE3D6007FC078 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0F57B32233CE3D6007FC078 /* main.cpp */; };
+		A0A21E3B235889F2001098A8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0A21E3A235889F2001098A8 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A0F57B2D233CE3D6007FC078 /* CopyFiles */ = {
+		A0A21E35235889F2001098A8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A0F57B2F233CE3D6007FC078 /* PtaDS3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PtaDS3; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0F57B32233CE3D6007FC078 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A0A21E37235889F2001098A8 /* PtaDS3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PtaDS3; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0A21E3A235889F2001098A8 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A0F57B2C233CE3D6007FC078 /* Frameworks */ = {
+		A0A21E34235889F2001098A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,26 +38,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0F57B26233CE3D6007FC078 = {
+		A0A21E2E235889F2001098A8 = {
 			isa = PBXGroup;
 			children = (
-				A0F57B31233CE3D6007FC078 /* PtaDS3 */,
-				A0F57B30233CE3D6007FC078 /* Products */,
+				A0A21E39235889F2001098A8 /* PtaDS3 */,
+				A0A21E38235889F2001098A8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A0F57B30233CE3D6007FC078 /* Products */ = {
+		A0A21E38235889F2001098A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0F57B2F233CE3D6007FC078 /* PtaDS3 */,
+				A0A21E37235889F2001098A8 /* PtaDS3 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A0F57B31233CE3D6007FC078 /* PtaDS3 */ = {
+		A0A21E39235889F2001098A8 /* PtaDS3 */ = {
 			isa = PBXGroup;
 			children = (
-				A0F57B32233CE3D6007FC078 /* main.cpp */,
+				A0A21E3A235889F2001098A8 /* main.cpp */,
 			);
 			path = PtaDS3;
 			sourceTree = "<group>";
@@ -65,13 +65,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A0F57B2E233CE3D6007FC078 /* PtaDS3 */ = {
+		A0A21E36235889F2001098A8 /* PtaDS3 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0F57B36233CE3D6007FC078 /* Build configuration list for PBXNativeTarget "PtaDS3" */;
+			buildConfigurationList = A0A21E3E235889F2001098A8 /* Build configuration list for PBXNativeTarget "PtaDS3" */;
 			buildPhases = (
-				A0F57B2B233CE3D6007FC078 /* Sources */,
-				A0F57B2C233CE3D6007FC078 /* Frameworks */,
-				A0F57B2D233CE3D6007FC078 /* CopyFiles */,
+				A0A21E33235889F2001098A8 /* Sources */,
+				A0A21E34235889F2001098A8 /* Frameworks */,
+				A0A21E35235889F2001098A8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -79,53 +79,54 @@
 			);
 			name = PtaDS3;
 			productName = PtaDS3;
-			productReference = A0F57B2F233CE3D6007FC078 /* PtaDS3 */;
+			productReference = A0A21E37235889F2001098A8 /* PtaDS3 */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A0F57B27233CE3D6007FC078 /* Project object */ = {
+		A0A21E2F235889F2001098A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "赵桐";
 				TargetAttributes = {
-					A0F57B2E233CE3D6007FC078 = {
-						CreatedOnToolsVersion = 10.3;
+					A0A21E36235889F2001098A8 = {
+						CreatedOnToolsVersion = 11.0;
 					};
 				};
 			};
-			buildConfigurationList = A0F57B2A233CE3D6007FC078 /* Build configuration list for PBXProject "PtaDS3" */;
+			buildConfigurationList = A0A21E32235889F2001098A8 /* Build configuration list for PBXProject "PtaDS3" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = A0F57B26233CE3D6007FC078;
-			productRefGroup = A0F57B30233CE3D6007FC078 /* Products */;
+			mainGroup = A0A21E2E235889F2001098A8;
+			productRefGroup = A0A21E38235889F2001098A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A0F57B2E233CE3D6007FC078 /* PtaDS3 */,
+				A0A21E36235889F2001098A8 /* PtaDS3 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A0F57B2B233CE3D6007FC078 /* Sources */ = {
+		A0A21E33235889F2001098A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0F57B33233CE3D6007FC078 /* main.cpp in Sources */,
+				A0A21E3B235889F2001098A8 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A0F57B34233CE3D6007FC078 /* Debug */ = {
+		A0A21E3C235889F2001098A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -157,7 +158,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -176,7 +176,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -184,7 +184,7 @@
 			};
 			name = Debug;
 		};
-		A0F57B35233CE3D6007FC078 /* Release */ = {
+		A0A21E3D235889F2001098A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -216,7 +216,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -229,27 +228,29 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		A0F57B37233CE3D6007FC078 /* Debug */ = {
+		A0A21E3F235889F2001098A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZT988RGZ9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		A0F57B38233CE3D6007FC078 /* Release */ = {
+		A0A21E40235889F2001098A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZT988RGZ9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -257,25 +258,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A0F57B2A233CE3D6007FC078 /* Build configuration list for PBXProject "PtaDS3" */ = {
+		A0A21E32235889F2001098A8 /* Build configuration list for PBXProject "PtaDS3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0F57B34233CE3D6007FC078 /* Debug */,
-				A0F57B35233CE3D6007FC078 /* Release */,
+				A0A21E3C235889F2001098A8 /* Debug */,
+				A0A21E3D235889F2001098A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0F57B36233CE3D6007FC078 /* Build configuration list for PBXNativeTarget "PtaDS3" */ = {
+		A0A21E3E235889F2001098A8 /* Build configuration list for PBXNativeTarget "PtaDS3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0F57B37233CE3D6007FC078 /* Debug */,
-				A0F57B38233CE3D6007FC078 /* Release */,
+				A0A21E3F235889F2001098A8 /* Debug */,
+				A0A21E40235889F2001098A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A0F57B27233CE3D6007FC078 /* Project object */;
+	rootObject = A0A21E2F235889F2001098A8 /* Project object */;
 }
