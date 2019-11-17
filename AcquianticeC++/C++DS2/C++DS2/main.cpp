@@ -102,22 +102,10 @@ public:
     
     void InputFront(const T& elem)
     {
-//        LinkNode FrontLinkNode;
-//        FrontLinkNode.data = elem;
-        
-//        FrontLinkNode.next = first;
-        if(first!=NULL)
-        {
-            LinkNode * temp = first;
-            first = new LinkNode(elem);
-            first->next  = temp;
-//            FrontLinkNode.next = first->next;
-//            first = &FrontLinkNode;
-//        LinkNode * temp = first->next;
-//        first->next
-        }
-//        else first = &FrontLinkNode;
-        else first = new LinkNode(elem);
+
+        LinkNode* temp = first;
+        first = new LinkNode(elem,temp);
+
     }
     //头插法 OK
     void InputRear(const T& elem)
@@ -423,7 +411,7 @@ public:
         T temp;
         while (in >> temp)
         {
-            L.InputRear(temp);
+            L.InputFront(temp);
 //            L.InputRear(temp);
         if(cin.get()=='\n')
         break;
@@ -441,23 +429,24 @@ int main()
     List lst;
 //    int number = 1;
     cin >> lst;
+    
 //    lst.Remove(1, number);
 ////    lst.Sort();
-//    cout << lst.Length();
+    cout << lst.Length();
 //    List lstcp;
 //    lstcp = lst;
 //    cout << lstcp;
     
-    srand(time(NULL));
-    for(int i=1; i<=2; i++)
-        lst.Insert(i,rand()%50);
-    lst.Sort();
-    cout<<lst;
-    int val;
-    lst.Remove(2,val);
-    cout<<lst;
-    List lst1=lst;
-//    lst.MakeEmpty();
-    lst=lst1;
-    cout<<lst;
+//    srand(time(NULL));
+//    for(int i=1; i<=2; i++)
+//        lst.Insert(i,rand()%50);
+//    lst.Sort();
+//    cout<<lst;
+//    int val;
+//    lst.Remove(2,val);
+//    cout<<lst;
+//    List lst1=lst;
+////    lst.MakeEmpty();
+//    lst=lst1;
+//    cout<<lst;
 }
