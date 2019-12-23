@@ -44,7 +44,7 @@ public:
     Graphlnk(int sz = DefaultVertices);    //构造函数
     ~Graphlnk();                        //析构函数
     T getValue(int i){    //返回该邻接顶点的编号，若不存在则返回0        //取位置为i的顶点中的值
-        return (i >= 0 && i < NumberOfVertices()) ? NodeTable[i].data : 0;
+        return (i >= 0 && i < Graph<T,E>::NumberOfVertices()) ? NodeTable[i].data : 0;
     }
 
     E getWeight(int v1, int v2);                        //返回边(v1,v2)上的权值
@@ -60,7 +60,7 @@ public:
     int getNextNeighbor(int v, int w);                    //取v的邻接顶点w的下一邻接顶点
 
     int getVertexPos(const T &vertex){                    //给出顶点vertex在图中的位置
-        for (int i = 0; i < numVertices; i++){
+        for (int i = 0; i < Graph<T,E>::numVertices; i++){
             if (NodeTable[i].data == vertex){
                 return i;
             }
@@ -74,16 +74,16 @@ private:
 //-----------------------------------------------------------------------------------------------------
 //构造函数：建立一个空的邻接表
 template <typename T, typename E>Graphlnk<T,E>::Graphlnk(int sz):Graph<T,E>(sz){
-    NodeTable = new Vertex<T,E>[maxVertices];        //创建顶点表数组
+    NodeTable = new Vertex<T,E>[Graph<T,E>::maxVertices];        //创建顶点表数组
     assert(NodeTable);
-    for (int i = 0; i < maxVertices; i++){
+    for (int i = 0; i < Graph<T,E>::maxVertices; i++){
         NodeTable[i].adj = NULL;
     }
 }
 
 //析构函数：删除一个邻接表
 template <typename T, typename E>Graphlnk<T,E>::~Graphlnk(){
-    for (int i = 0; i < numVertices; i++ ){        //删除各边链表中的结点
+    for (int i = 0; i < Graph<T,E>::numVertices; i++ ){        //删除各边链表中的结点
         Edge<T,E> *p = NodeTable[i].adj;         //找到其对应边链表的首结点
         while (p != NULL){                        //不断地删除第一个结点
             NodeTable[i].adj = p->link;
@@ -110,18 +110,18 @@ template <typename T, typename E>E Graphlnk<T,E>::getWeight(int v1, int v2){
 
 template <typename T, typename E>bool Graphlnk<T,E>::insertVertex(const T& vertex){
     //在图的顶点表中插入一个新顶点vertex。若插入成功，函数返回true, 否则返回false。
-    if (numVertices == maxVertices){    //顶点表满, 不能插入
+    if (Graph<T,E>::numVertices == Graph<T,E>::maxVertices){    //顶点表满, 不能插入
         return false;
     }
-    NodeTable[numVertices].data = vertex;            //插入在表的最后
-    numVertices++;
+    NodeTable[Graph<T,E>::numVertices].data = vertex;            //插入在表的最后
+    Graph<T,E>::numVertices++;
     return true;
 }
 
 //在带权图中插入一条边(v1,v2),
 //若此边存在或参数不合理，函数返回false, 否则返回true。
 template <typename T, typename E>bool Graphlnk<T,E>::insertEdge(int v1, int v2, E weight){
-    if (v1 >= 0 && v1 < numVertices && v2 >= 0 && v2 < numVertices){
+    if (v1 >= 0 && v1 < Graph<T,E>::numVertices && v2 >= 0 && v2 < Graph<T,E>::numVertices){
         Edge<T,E> *q, *p = NodeTable[v1].adj;        //v1对应的边链表头指针
         while (p != NULL && p->dest != v2){         //寻找邻接顶点v2
             p = p->link;
@@ -140,7 +140,7 @@ template <typename T, typename E>bool Graphlnk<T,E>::insertEdge(int v1, int v2, 
         q->cost = weight;
         q->link = NodeTable[v2].adj;                 //链入v2边链表
         NodeTable[v2].adj = q;
-        numEdges++;
+        Graph<T,E>::numEdges++;
         return true;
     }
     return false;
@@ -206,7 +206,7 @@ template <typename T, typename E>bool Graphlnk<T,E>::removeEdge(int v1, int v2){
             q->link = p->link;                            //不是, 重新链接
         }
         delete p;
-        numEdges--;
+        Graph<T,E>::numEdges--;
         return true;
     }
     return false;                                        //没有找到结点
@@ -214,7 +214,7 @@ template <typename T, typename E>bool Graphlnk<T,E>::removeEdge(int v1, int v2){
 
 template <typename T, typename E>bool Graphlnk<T,E>::removeVertex(int v){
     //在图中删除一个指定顶点v, v是顶点号。若删除成功, 函数返回true, 否则返回false。
-    if (numVertices == 1 || v < 0 || v >= numVertices){
+    if (Graph<T,E>::numVertices == 1 || v < 0 || v >= Graph<T,E>::numVertices){
         return false;
     }
     //表空或顶点号超出范围
@@ -236,16 +236,16 @@ template <typename T, typename E>bool Graphlnk<T,E>::removeVertex(int v){
         }
         NodeTable[v].adj = p->link;                    //清除顶点v的边链表结点
         delete p;
-        numEdges--;                                    //与顶点v相关联的边数减一
+        Graph<T,E>::numEdges--;                                    //与顶点v相关联的边数减一
     }
-    numVertices--;                                    //图的顶点个数减1
-    NodeTable[v].data = NodeTable[numVertices].data;//填补#用最后一个顶点来代替
-    NodeTable[v].adj = NodeTable[numVertices].adj;
+    Graph<T,E>::numVertices--;                                    //图的顶点个数减1
+    NodeTable[v].data = NodeTable[Graph<T,E>::numVertices].data;//填补#用最后一个顶点来代替
+    NodeTable[v].adj = NodeTable[Graph<T,E>::numVertices].adj;
     p = NodeTable[v].adj;
     while (p != NULL){                                //用来顶替的顶点下标变了，对应边的表达要改变
         s = NodeTable[p->dest].adj;
         while (s!= NULL){
-            if (s->dest == numVertices){
+            if (s->dest == Graph<T,E>::numVertices){
                 s->dest = v;//修改对应边顶点的下标
                 break;
             }
